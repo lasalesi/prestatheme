@@ -34,10 +34,10 @@ button,select{text-transform:none}
 
 /* custom css */
 #header {
-   background-image: url("/themes/eso/assets/bg_top_eso.png");
+   background-image: url("/themes/eso/assets/img/bg_top_eso.png");
 }
 
 #wrapper {
    background-color: #F8D4FF;
-   background-image: url("/themes/eso/assets/bg_main_eso.png");
+   background-image: url("/themes/eso/assets/img/bg_main_eso.png");
 }
