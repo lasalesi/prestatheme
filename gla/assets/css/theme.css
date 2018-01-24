@@ -8,10 +8,10 @@
 
 /* custom css */
 #header {
-   background-image: url("/bg_top_esoterik.png");
+   /* background-image: url("/themes/eso/assets/img/bg_top_gla.png"); */
 }
 
 #wrapper {
    background-color: #F8D4FF;
-   background-image: url("/bg_main_esoterik.png");
+   /* background-image: url("/themes/eso/assets/img/bg_main_gla.png"); */
 }

@@ -1,10 +1,10 @@
-name: classic
-display_name: Classic
+name: gla
+display_name: gla
 version: 1.0.0
 author:
-  name: "PrestaShop Team"
-  email: "pub@prestashop.com"
-  url: "http://www.prestashop.com"
+  name: "libracore"
+  email: "info@libracore.com"
+  url: "https://www.libracore.com"
 
 meta:
   compatibility:
