@@ -1,0 +1,2 @@
+# prestatheme
+Theme for PrestaShop
