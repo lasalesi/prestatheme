@@ -33,7 +33,8 @@
     {/if}
 {/function}
 
+<!-- removed top menu
 <div class="menu col-lg-8 col-md-7 js-top-menu position-static hidden-sm-down" id="_desktop_top_menu">
     {menu nodes=$menu.children}
     <div class="clearfix"></div>
-</div>
+</div> -->
