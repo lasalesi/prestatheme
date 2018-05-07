@@ -163,7 +163,16 @@
             value="{$field.value}"
             {if isset($field.availableValues.placeholder)}placeholder="{$field.availableValues.placeholder}"{/if}
             {if $field.maxLength}maxlength="{$field.maxLength}"{/if}
-            {if $field.required}required{/if}
+
+
+
+
+            {* Make the birthday field mandatory. PB *}
+            {if ($field.required || $field.name=="birthday")}required{/if}
+
+
+
+
           >
           {if isset($field.availableValues.comment)}
             <span class="form-control-comment">
@@ -182,7 +191,16 @@
 
     <div class="col-md-3 form-control-comment">
       {block name='form_field_comment'}
-        {if (!$field.required && !in_array($field.type, ['radio-buttons', 'checkbox']))}
+
+
+
+
+        {* Disable the 'Optional' comment for the birthday input field. PB *}
+        {if (!$field.required && $field.name!="birthday" && !in_array($field.type, ['radio-buttons', 'checkbox']))}
+
+
+
+
          {l s='Optional' d='Shop.Forms.Labels'}
         {/if}
       {/block}

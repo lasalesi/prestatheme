@@ -65,7 +65,16 @@
                 {include file='checkout/_partials/cart-summary.tpl' cart = $cart}
               {/block}
 
-              {hook h='displayReassurance'}
+
+
+
+              {* Disable block reassurance. PB
+                {hook h='displayReassurance'}
+              *}
+
+
+
+
             </div>
           </div>
         </section>
@@ -74,11 +83,19 @@
       {hook h="displayWrapperBottom"}
     </section>
 
-    <footer id="footer">
-      {block name='footer'}
-        {include file='checkout/_partials/footer.tpl'}
-      {/block}
-    </footer>
+
+
+
+    {* Disable the Prestashop footer. PB
+        <footer id="footer">
+          {block name='footer'}
+            {include file='checkout/_partials/footer.tpl'}
+          {/block}
+        </footer>
+    *}
+
+
+
 
     {block name='javascript_bottom'}
       {include file="_partials/javascript.tpl" javascript=$javascript.bottom}

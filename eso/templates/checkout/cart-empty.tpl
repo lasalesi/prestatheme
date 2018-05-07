@@ -42,4 +42,10 @@
 
 {block name='continue_shopping'}{/block}
 {block name='cart_voucher'}{/block}
-{block name='display_reassurance'}{/block}
+
+
+
+
+{* Disable block reassurance. PB
+    {block name='display_reassurance'}{/block}
+*}

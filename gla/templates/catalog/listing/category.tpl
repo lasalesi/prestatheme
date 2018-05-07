@@ -26,17 +26,67 @@
 
 {block name='product_list_header'}
     <div class="block-category card card-block hidden-sm-down">
-      <h1 class="h1">{$category.name}</h1>
+
+      {* Check if the actual page is not the start page (Deko Glas-Kristall). PB *}
+      {if $category.name != 'Deko Glas-Kristall'}
+
+        <h1 class="h1">{$category.name}</h1>
+      {/if}
+
       {if $category.description}
         <div id="category-description" class="text-muted">{$category.description nofilter}</div>
       {/if}
-      {if $category.image.large.url}
-        <div class="category-cover">
-          <img src="{$category.image.large.url}" alt="{$category.image.legend}">
-        </div>
-      {/if}
+
+      {* Disable the category images. PB 
+          {if $category.image.large.url}
+            <div class="category-cover">
+              <img src="{$category.image.large.url}" alt="{$category.image.legend}">
+            </div>
+          {/if}
+      *}
+
     </div>
     <div class="text-sm-center hidden-md-up">
       <h1 class="h1">{$category.name}</h1>
     </div>
+
+    {* Check if there are subcategories available. PB *}
+    {if isset($subcategories)}
+
+        {* Check if the actual page is not the start page (Deko Glas-Kristall). PB *}
+        {if $category.name != 'Deko Glas-Kristall'}
+
+            {* Check if subcategories exist. PB *}
+            {if count($subcategories)>=1}
+
+                <!-- Subcategories -->
+                <div id="subcategories">
+                    {* <p class="subcategory-heading">{l s='Subcategories'}</p> *}
+                    <ul class="clearfix">
+                        {foreach from=$subcategories item=subcategory}
+                            <li>
+                                <div class="subcategory-image">
+                                    <a href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}" title="{$subcategory.name|escape:'html':'UTF-8'}" class="img">
+                                        {if $subcategory.id_image}
+                                            <img class="replace-2x" src="{$link->getCatImageLink($subcategory.link_rewrite, $subcategory.id_image, 'category_default')|escape:'html':'UTF-8'}" alt="{$subcategory.name|escape:'html':'UTF-8'}"/>
+                                        {else}
+                                            <img class="replace-2x" src="{$img_cat_dir}{$lang_iso}-default-category_default.jpg" alt="{$subcategory.name|escape:'html':'UTF-8'}"/>
+                                        {/if}
+                                    </a>
+                                </div>
+                                <h5><a class="subcategory-name" href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">{$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}</a></h5>
+                                {if $subcategory.description}
+                                    <div class="cat_desc">{$subcategory.description}</div>
+                                {/if}
+                            </li>
+                        {/foreach}
+                    </ul>
+                </div>
+
+            {/if}
+
+        {/if}
+
+    {/if}
+
 {/block}
